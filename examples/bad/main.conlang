@@ -1,0 +1,5 @@
+// This is a good constraint.
+(x) * (y) = (z);
+// Here are some bad constraints.
+// (x + 1) * (y) = (z);
+// (-1 - -3 * x) * (y + x + z) = (x * 5 + z + y + y);

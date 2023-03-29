@@ -1,0 +1,6 @@
+// This is an example of a constraint.
+// Each constraint contains a linear combination of variables, delimited by parentheses.
+// Linear combinations begin with a optional constant, followed by a sequence of terms.
+(x) * (y) = (z);
+(0 + x) * (-0 + y) = (0 + z);
+(2 * x) * (2 * y) = (4 * z);

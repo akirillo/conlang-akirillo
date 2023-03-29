@@ -1,0 +1,31 @@
+[package]
+name = "conlang-span"
+version = "0.1.0"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "Span handling for the conlang DSL"
+keywords = [
+  "cryptography",
+  "conlang",
+  "programming-language",
+  "r1cs",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.65"
+
+[dependencies.indexmap]
+version = "1.9"
+features = [ "serde" ]
+
+[dependencies.fxhash]
+version = "0.2.1"
+
+[dependencies.scoped-tls]
+version = "1.0.1"
+
+[dependencies.serde]
+version = "1.0.158"
+features = [ "derive", "rc" ]

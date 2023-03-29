@@ -1,0 +1,155 @@
+[package]
+name = "conlang"
+version = "0.1.0"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "The conlang DSL."
+keywords = [
+  "cryptography",
+  "conlang",
+  "programming-language",
+  "r1cs",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography" ]
+include = [ "Cargo.toml", "conlang", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+
+[workspace]
+members = [
+  "ast",
+  "compiler",
+  "parser",
+  "passes",
+  "span",
+  "errors",
+]
+
+[lib]
+path = "conlang/lib.rs"
+
+[[bin]]
+name = "conlang"
+path = "conlang/main.rs"
+
+[workspace.dependencies.snarkvm-console]
+version = "0.9.14"
+
+[dependencies.conlang-ast]
+path = "./ast"
+version = "0.1.0"
+
+[dependencies.conlang-compiler]
+path = "./compiler"
+version = "0.1.0"
+
+[dependencies.conlang-errors]
+path = "./errors"
+version = "0.1.0"
+
+[dependencies.conlang-parser]
+path = "./parser"
+version = "0.1.0"
+
+[dependencies.conlang-span]
+path = "./span"
+version = "0.1.0"
+
+[dependencies.backtrace]
+version = "0.3.67"
+
+[dependencies.clap]
+version = "3.2"
+features = [ "derive", "env" ]
+
+[dependencies.color-backtrace]
+version = "0.5.1"
+
+[dependencies.colored]
+version = "2.0"
+
+[dependencies.console]
+version = "0.15.5"
+
+[dependencies.dirs]
+version = "5.0.0"
+
+[dependencies.indexmap]
+version = "1.9"
+features = [ "serde" ]
+
+[dependencies.lazy_static]
+version = "1.4.0"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.rand_core]
+version = "0.6.4"
+
+[dependencies.self_update]
+version = "0.36.0"
+features = [ "archive-zip" ]
+
+[dependencies.serde]
+version = "1.0"
+features = [ "derive" ]
+
+[dependencies.serde_json]
+version = "1.0"
+
+[dependencies.sys-info]
+version = "0.9.1"
+
+[dependencies.toml]
+version = "0.7"
+
+[dependencies.tracing]
+version = "0.1"
+
+[dependencies.tracing-subscriber]
+version = "0.3.16"
+features = [ "fmt" ]
+
+[dependencies.zip]
+version = "^0.6"
+
+[target."cfg(windows)".dependencies.ansi_term]
+version = "0.12.1"
+
+[dev-dependencies.assert_cmd]
+version = "2.0.10"
+
+[dev-dependencies.rusty-hook]
+version = "0.11.2"
+
+[dev-dependencies.test_dir]
+version = "0.2.0"
+
+[build-dependencies.walkdir]
+version = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+incremental = true
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = "thin"
+incremental = true
+debug-assertions = false
+
+[profile.dev]
+opt-level = 2
+lto = "thin"
+incremental = true
+
+[profile.test]
+opt-level = 2
+lto = "thin"
+incremental = true
+debug = true
+debug-assertions = true

@@ -1,0 +1,45 @@
+[package]
+name = "conlang-passes"
+version = "0.1.0"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "Compiler passes for the conlang DSL"
+keywords = [
+  "cryptography",
+  "conlang",
+  "programming-language",
+  "r1cs",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.65"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies.conlang-ast]
+path = "../ast"
+version = "0.1.0"
+
+[dependencies.conlang-errors]
+path = "../errors"
+version = "0.1.0"
+
+[dependencies.conlang-parser]
+path = "../parser"
+version = "0.1.0"
+
+[dependencies.conlang-span]
+path = "../span"
+version = "0.1.0"
+
+[dependencies.indexmap]
+version = "1.9"
+
+[dependencies.itertools]
+version = "0.10.5"
+
+[dependencies.num-traits]
+version = "0.2.15"

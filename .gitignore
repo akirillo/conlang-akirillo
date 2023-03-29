@@ -1,0 +1,23 @@
+**/target
+/tmp/
+**.idea/
+*.DS_Store
+.vscode
+conlang.iml
+
+**/process.yml
+
+**/.crates.toml
+**/.crates2.json
+**/bin/
+
+# sccache from pipeline
+sccache*/
+
+# Emacs gitignore files
+*~
+\#*\#
+.\#*
+
+# code coverage scripts
+*.bat

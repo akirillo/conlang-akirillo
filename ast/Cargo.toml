@@ -1,0 +1,56 @@
+[package]
+name = "conlang-ast"
+version = "0.1.0"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "Abstract syntax tree (AST) for the conlang DSL"
+keywords = [
+  "cryptography",
+  "conlang",
+  "programming-language",
+  "r1cs",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.65"
+
+[dependencies.snarkvm-console]
+workspace = true
+default-features = false
+features = [ "account", "network" ]
+
+[dependencies.conlang-span]
+path = "../span"
+version = "0.1.0"
+
+[dependencies.conlang-errors]
+path = "../errors"
+version = "0.1.0"
+
+[dependencies.indexmap]
+version = "1.9"
+features = [ "serde-1" ]
+
+[dependencies.itertools]
+version = "0.10.5"
+
+[dependencies.serde]
+version = "1.0"
+features = [ "derive", "rc" ]
+
+[dependencies.serde_json]
+version = "1.0"
+features = [ "preserve_order" ]
+
+[dependencies.smallvec]
+version = "1.10.0"
+features = [ "serde" ]
+
+[dev-dependencies.criterion]
+version = "0.4"
+
+[features]
+default = [ ]
+ci_skip = [ ]

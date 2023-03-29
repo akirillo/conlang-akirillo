@@ -1,0 +1,62 @@
+[package]
+name = "conlang-compiler"
+version = "0.1.0"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "Compiler for conlang DSL"
+keywords = [
+  "cryptography",
+  "conlang",
+  "programming-language",
+  "r1cs",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.65"
+
+[dependencies.snarkvm-console]
+workspace = true
+default-features = false
+features = [ "account", "network" ]
+
+[dependencies.conlang-ast]
+path = "../ast"
+version = "0.1.0"
+
+[dependencies.conlang-errors]
+path = "../errors"
+version = "0.1.0"
+
+[dependencies.conlang-passes]
+path = "../passes"
+version = "0.1.0"
+
+[dependencies.conlang-parser]
+path = "../parser"
+version = "0.1.0"
+
+[dependencies.conlang-span]
+path = "../span"
+version = "0.1.0"
+
+[dependencies.sha2]
+version = "0.10"
+
+[dev-dependencies.rand]
+version = "0.8"
+default-features = false
+
+[dev-dependencies.regex]
+version = "1.7.2"
+
+[dev-dependencies.serde]
+version = "1.0.158"
+features = [ "derive" ]
+
+[dev-dependencies.serde_yaml]
+version = "0.8.25"
+
+[dev-dependencies.tempfile]
+version = "3.4"

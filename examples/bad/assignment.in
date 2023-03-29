@@ -1,0 +1,6 @@
+f00 ;
+x + j = 2;
+x = 3 + j;
+x = y;
+foo bar baz;
+d = 3;
